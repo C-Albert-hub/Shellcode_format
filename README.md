@@ -118,13 +118,14 @@ binx -i any.bin -o out.txt -f b64
 
 ```
 src/
- ├── args.rs       # clap 命令参数解析
- ├── main.rs       # 程序入口
- ├── util.rs       # ANSI 颜色输出 & 读取函数
- ├── rs.rs         # Rust 格式输出
- ├── c.rs          # C 格式输出
- ├── hex.rs        # hex / hex-dump 输出
- ├── base64.rs     # Base64 输出
- ├── raw.rs        # raw 输出
+├── main.rs            // 程序入口：流程控制、调度各模块
+├── args.rs            // Clap 参数解析
+├── util.rs            // ANSI 颜色日志 / 文件读写工具
+├── format/            // 各种输出格式的模块
+│   ├── rs.rs          // Rust shellcode 数组输出
+│   ├── c.rs           // C unsigned char 数组输出
+│   ├── hex.rs         // Hex 字节序列 & Hex Dump 输出
+│   ├── base64.rs      // Base64 输出
+│   └── raw.rs         // 原始二进制输出
 ```
 
